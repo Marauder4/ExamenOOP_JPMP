@@ -4,7 +4,6 @@ public class Main{
         Scanner userInput = new Scanner(System.in);
         try {
             Lienzo lienzo = new LienzoImp();
-            FabricaFiguras fabrica = new FabricaFigurasImp();
             Coordinador coordinador = new CoordinadorImp();
             String topico = "figuras";
             coordinador.registrarTopico(topico);
@@ -18,7 +17,7 @@ public class Main{
                 String colorBorde = userInput.next();
                 System.out.println("Especifique el color del fondo de la figura:");
                 String colorFondo = userInput.next();
-                coordinador.enviarFigura(topico, fabrica.fabricarFigura(forma, colorBorde, colorFondo));
+                coordinador.enviarFigura(topico, FabricaFiguras.fabricarFigura(forma, colorBorde, colorFondo));
                 System.out.println("Figuras en el lienzo:");
                 lienzo.mostrarFiguras();
                 System.out.println("¿Desea añadir otra figura? (y/n)");
